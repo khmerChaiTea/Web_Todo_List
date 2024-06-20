@@ -11,22 +11,29 @@
       <h1>To-Do List</h1>
       <form id="todo-form">
         <input type="text" placeholder="Enter a new task" />
-        <button>Add Task</button>
+        <button type="submit">Add Task</button>
       </form>
       <ul id="todo-list">
-        <div class="todo-item">
-          <li>Eat breakfast</li>
-          <button>Remove</button>
-        </div>
-        <div class="todo-item">
-          <li>Go to school</li>
-          <button>Remove</button>
-        </div>
-        <div class="todo-item">
-          <li>Go to work</li>
-          <button>Remove</button>
-        </div>
+        <li>
+          <div class="todo-item">
+            <span>Eat breakfast</span>
+            <button class="remove" type="button">Remove</button>
+          </div>
+        </li>
+        <li>
+          <div class="todo-item">
+            <span>Go to school</span>
+            <button class="remove" type="button">Remove</button>
+          </div>
+        </li>
+        <li>
+          <div class="todo-item">
+            <span>Go to work</span>
+            <button class="remove" type="button">Remove</button>
+          </div>
+        </li>
       </ul>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
