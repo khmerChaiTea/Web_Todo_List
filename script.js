@@ -1,32 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const todoForm = document.getElementById("todo-form");
-  const todoList = document.getElementById("todo-list");
-
-  todoForm.addEventListener("submit", (event) => {
+document
+  .getElementById("todo-form")
+  .addEventListener("submit", function (event) {
     event.preventDefault();
-    const inputElement = document.getElementById("todo-input");
-    const text = inputElement.value;
-    addTodo(text);
-    inputElement.value = "";
+
+    // Get the value of the input field
+    let taskInput = this.querySelector('input[type="text"]');
+    let taskText = taskInput.value.trim();
+
+    if (taskText !== "") {
+      // Create a new list item
+      let li = document.createElement("li");
+      li.innerHTML = `<div class="todo-item">
+                            <span>${taskText}</span>
+                            <button class="remove" type="button">Remove</button>
+                        </div>`;
+
+      // Append li to the todo list
+      document.getElementById("todo-list").appendChild(li);
+
+      // Clear the input field
+      taskInput.value = "";
+    }
   });
 
-  /**
-   * Adds a new value to the to do list based on the passed in str
-   * @param {string} str this is the string value that should be added to the list
-   */
-  function addTodo(str) {
-    const li = document.createElement("li");
-    li.textContent = str;
-    li.className = "todo-item";
-
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-
-    removeButton.addEventListener("click", () => {
-      todoList.removeChild(li);
-    });
-
-    li.appendChild(removeButton);
-    todoList.appendChild(li);
-  }
-});
+document
+  .getElementById("todo-list")
+  .addEventListener("click", function (event) {
+    if (event.target.classList.contains("remove")) {
+      // Remove the parent <li> element
+      let li = event.target.closest("li");
+      li.remove();
+    }
+  });

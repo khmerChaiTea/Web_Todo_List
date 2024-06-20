@@ -10,10 +10,29 @@
     <div class="container">
       <h1>To-Do List</h1>
       <form id="todo-form">
-        <input id="todo-input" type="text" placeholder="Enter a new task" />
+        <input type="text" placeholder="Enter a new task" />
         <button type="submit">Add Task</button>
       </form>
-      <ul id="todo-list"></ul>
+      <ul id="todo-list">
+        <li>
+          <div class="todo-item">
+            <span>Eat breakfast</span>
+            <button class="remove" type="button">Remove</button>
+          </div>
+        </li>
+        <li>
+          <div class="todo-item">
+            <span>Go to school</span>
+            <button class="remove" type="button">Remove</button>
+          </div>
+        </li>
+        <li>
+          <div class="todo-item">
+            <span>Go to work</span>
+            <button class="remove" type="button">Remove</button>
+          </div>
+        </li>
+      </ul>
     </div>
     <script src="script.js"></script>
   </body>
